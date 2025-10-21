@@ -20,8 +20,8 @@
         }
     ],
     "env": {
-        "NEXT_PUBLIC_SITE_URL": "https://your-site.vercel.app",
-        "EMAIL_TO": "hello@meldavis.art"
+        "NEXT_PUBLIC_SITE_URL": "https://magicmomentsbymel.com",
+        "EMAIL_TO": "hello@magicmomentsbymel.com"
     },
     "build": {
         "env": {
