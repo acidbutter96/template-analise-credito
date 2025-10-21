@@ -2,21 +2,17 @@ import Link from "next/link";
 
 export default function Logo() {
   return (
-    <Link href="/" className="inline-flex" aria-label="Cruip">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-        <path
-          className="fill-blue-500"
-          fillRule="evenodd"
-          d="M15.052 0c6.914.513 12.434 6.033 12.947 12.947h-5.015a7.932 7.932 0 0 1-7.932-7.932V0Zm-2.105 22.985V28C6.033 27.487.513 21.967 0 15.053h5.015a7.932 7.932 0 0 1 7.932 7.932Z"
-          clipRule="evenodd"
-        />
-        <path
-          className="fill-blue-300"
-          fillRule="evenodd"
-          d="M0 12.947C.513 6.033 6.033.513 12.947 0v5.015a7.932 7.932 0 0 1-7.932 7.932H0Zm22.984 2.106h5.015C27.486 21.967 21.966 27.487 15.052 28v-5.015a7.932 7.932 0 0 1 7.932-7.932Z"
-          clipRule="evenodd"
-        />
-      </svg>
+    <Link href="/" className="inline-flex items-center gap-3" aria-label="Mel Davis">
+      <div className="rounded-md bg-gradient-to-tr from-rose-500 to-pink-300 p-2 shadow-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+          <circle cx="14" cy="8" r="4" className="fill-white opacity-90" />
+          <rect x="4" y="14" width="20" height="10" rx="3" className="fill-white opacity-90" />
+        </svg>
+      </div>
+      <div className="hidden flex-col leading-tight md:flex">
+        <span className="text-sm font-semibold">Mel Davis</span>
+        <span className="text-xs text-gray-500">Painter & Visual Artist</span>
+      </div>
     </Link>
   );
 }

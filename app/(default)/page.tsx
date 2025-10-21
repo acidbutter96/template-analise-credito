@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Home - Simple",
-  description: "Page description",
+  title: "Mel Davis — Home",
+  description: "Mel Davis — painter and visual artist based in New Orleans. View portfolio and commission information.",
 };
 
 import Hero from "@/components/hero-home";
