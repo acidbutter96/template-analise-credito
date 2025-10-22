@@ -9,9 +9,8 @@ import Cta from "@/components/cta";
 export default function PortfolioPage() {
   return (
     <>
-      <Hero />
+      <Hero title={<span>Portfolio</span>} description={<span>A selection of recent paintings. Click an image to view details.</span>} />
       <main className="mx-auto max-w-6xl px-4 sm:px-6 py-28">
-        <h1 className="mb-8 text-4xl font-bold">Portfolio</h1>
         <p className="mb-6 text-gray-700">A selection of recent paintings. Click an image to view details.</p>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

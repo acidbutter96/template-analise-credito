@@ -9,9 +9,8 @@ import Cta from "@/components/cta";
 export default function ServicesPage() {
   return (
     <>
-      <Hero />
+      <Hero title={<span>Services</span>} description={<span>Commissions, prints, and art services offered by Mel Davis.</span>} />
       <main className="mx-auto max-w-4xl px-4 sm:px-6 py-28">
-        <h1 className="mb-4 text-4xl font-bold">Services</h1>
         <p className="mb-6 text-gray-700">Services offered by Mel Davis:</p>
         <ul className="mb-6 ml-6 list-disc text-gray-700 space-y-2">
           <li>

@@ -9,9 +9,8 @@ import Cta from "@/components/cta";
 export default function ContactPage() {
   return (
     <>
-      <Hero />
+      <Hero title={<span>Contact</span>} description={<span>Interested in a commission or exhibition? Reach out.</span>} />
       <main className="mx-auto max-w-2xl px-4 sm:px-6 py-28">
-        <h1 className="mb-4 text-4xl font-bold">Contact</h1>
         <p className="mb-6 text-gray-700">Interested in a commission or exhibition? Reach out:</p>
 
         <div className="mb-6">
