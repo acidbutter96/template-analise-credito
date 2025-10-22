@@ -2,7 +2,7 @@ import "./css/style.css";
 
 import { Inter } from "next/font/google";
 import DefaultShell from "@/components/default-shell";
-import BackgroundClient from "@/components/BackgroundClient";
+// import BackgroundClient from "@/components/BackgroundClient";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,7 +26,7 @@ export default function RootLayout({
         className={`${inter.variable} bg-transparent font-inter tracking-tight text-gray-900 antialiased`}
         style={{ backgroundColor: 'transparent' }}
       >
-        <BackgroundClient />
+        {/* <BackgroundClient /> */}
         <div className="flex min-h-screen flex-col relative z-10 overflow-hidden supports-[overflow:clip]:overflow-clip">
           <DefaultShell>{children}</DefaultShell>
         </div>

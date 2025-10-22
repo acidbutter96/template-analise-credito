@@ -105,7 +105,7 @@ function MobileNav() {
 
   return (
     <div className="w-full md:hidden">
-      <div className="flex items-center justify-end w-auto pointer-events-auto">
+      <div className="flex items-center justify-center w-full pointer-events-auto">
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
