@@ -63,8 +63,8 @@ export default function Header() {
             <Logo />
           </div>
 
-          {/* Navigation */}
-          <nav>
+          {/* Navigation - desktop */}
+          <nav className="hidden md:block">
             <ul className="flex items-center gap-4 text-sm">
               <li>
                 <Link className="text-gray-700 hover:text-gray-900" href="/">
@@ -93,8 +93,61 @@ export default function Header() {
               </li>
             </ul>
           </nav>
+
+          {/* Mobile hamburger */}
+          <MobileNav />
         </div>
       </div>
     </header>
+  );
+}
+
+function MobileNav() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="md:hidden">
+      <button
+        aria-label="Open menu"
+        onClick={() => setOpen((s) => !s)}
+        className="z-40 inline-flex items-center justify-center rounded-md p-2 text-gray-700 bg-white/0 hover:bg-gray-50 pointer-events-auto"
+      >
+        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute right-3 top-14 z-40 w-48 rounded-lg bg-white shadow-lg pointer-events-auto">
+          <ul className="flex flex-col p-2">
+            <li>
+              <Link className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/services">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/portfolio">
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/contact">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
   );
 }
