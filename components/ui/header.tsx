@@ -77,13 +77,13 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-700 hover:text-gray-900" href="/portfolio">
-                  Portfolio
+                <Link className="text-gray-700 hover:text-gray-900" href="/services">
+                  Services
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-700 hover:text-gray-900" href="/services">
-                  Services
+                <Link className="text-gray-700 hover:text-gray-900" href="/portfolio">
+                  Portfolio
                 </Link>
               </li>
               <li>
