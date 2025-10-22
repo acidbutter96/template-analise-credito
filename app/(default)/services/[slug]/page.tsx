@@ -2,7 +2,7 @@ import Hero from "@/components/hero-home";
 import Cta from "@/components/cta";
 import ServiceGallery from "@/components/service-gallery";
 
-type Props = { params: { slug: string } };
+// Inline params typing in the page component to avoid mismatches with Next's PageProps generic
 
 export async function generateStaticParams() {
     // Keep in sync with services list in services index
@@ -23,7 +23,8 @@ const serviceMeta: Record<string, { title: string; description: string }> = {
     "painting-classes": { title: "Painting Classes", description: "Group and private lessons for all levels, focusing on acrylic and mixed-media techniques." },
 };
 
-export default function ServicePage({ params }: Props) {
+export default function ServicePage(props: any) {
+    const { params } = props as { params: { slug: string } };
     const meta = serviceMeta[params.slug] ?? { title: params.slug, description: "" };
 
     // Example placeholder images per service — later these will be real assets or fetched data
