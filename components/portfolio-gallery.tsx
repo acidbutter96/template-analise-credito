@@ -10,6 +10,8 @@ export default function PortfolioGallery() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -75,6 +77,20 @@ export default function PortfolioGallery() {
     return;
   }, [openIndex]);
 
+  // handle animation state when openIndex changes
+  useEffect(() => {
+    if (openIndex !== null) {
+      setIsVisible(true);
+      // small timeout to allow enter transition to run
+      requestAnimationFrame(() => setIsAnimating(true));
+    } else if (isVisible) {
+      // start exit animation
+      setIsAnimating(false);
+      const t = setTimeout(() => setIsVisible(false), 320); // match transition duration
+      return () => clearTimeout(t);
+    }
+  }, [openIndex]);
+
   if (loading) return <p>Loading portfolio…</p>;
   if (error) return <p className="text-red-600">{error}</p>;
   if (images.length === 0) return <p>No images found.</p>;
@@ -89,7 +105,7 @@ export default function PortfolioGallery() {
           <div key={i} className="rounded-lg bg-white p-4 shadow">
             <button
               onClick={() => setOpenIndex(i)}
-              className="block w-full text-left"
+              className="block w-full text-left cursor-pointer"
               aria-label={`Open image ${i + 1}`}
             >
               <div className="aspect-[4/3] w-full overflow-hidden rounded-md bg-gray-100 relative">
@@ -111,14 +127,21 @@ export default function PortfolioGallery() {
       </div>
 
       {/* Lightbox modal */}
-      {openIndex !== null && (
+      {isVisible && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-colors duration-300 ease-out ${
+            isAnimating ? "bg-black/70" : "bg-black/0"
+          }`}
           role="dialog"
           aria-modal="true"
           onClick={() => setOpenIndex(null)}
         >
-          <div className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
+          <div
+            className={`relative max-w-5xl w-full transform transition-all duration-300 ease-out ${
+              isAnimating ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setOpenIndex(null)}
               className="absolute top-2 right-2 z-50 rounded bg-black/40 p-2 text-white"
@@ -143,20 +166,51 @@ export default function PortfolioGallery() {
               ›
             </button>
 
-            <div className="w-full bg-gray-900">
-              <div className="relative aspect-[4/3] w-full bg-black">
-                <Image
-                  src={images[openIndex]}
-                  alt={`Portfolio ${openIndex + 1}`}
-                  fill
-                  style={{ objectFit: "contain" }}
-                  sizes="100vw"
-                  priority
-                  placeholder="blur"
-                  blurDataURL={makeBlurDataURL(images[openIndex])}
-                />
+            {openIndex !== null && (
+              <div className="w-full bg-gray-900">
+                <div
+                  className={`relative aspect-[4/3] w-full bg-black transform transition-transform duration-300 ease-out ${
+                    isAnimating ? "scale-105" : "scale-100"
+                  }`}
+                  // touch handlers for swipe navigation
+                  onTouchStart={(e) => {
+                    const t = e.touches[0];
+                    (e.currentTarget as any)._startX = t.clientX;
+                    (e.currentTarget as any)._swiping = false;
+                  }}
+                  onTouchMove={(e) => {
+                    const t = e.touches[0];
+                    const cur = (e.currentTarget as any);
+                    if (typeof cur._startX !== "number") return;
+                    const dx = t.clientX - cur._startX;
+                    if (Math.abs(dx) > 10) cur._swiping = true;
+                  }}
+                  onTouchEnd={(e) => {
+                    const cur = (e.currentTarget as any);
+                    if (typeof cur._startX !== "number") return;
+                    const endX = e.changedTouches[0].clientX;
+                    const dx = endX - cur._startX;
+                    const threshold = 60; // px
+                    if (dx > threshold) {
+                      openPrev();
+                    } else if (dx < -threshold) {
+                      openNext();
+                    }
+                  }}
+                >
+                  <Image
+                    src={images[openIndex]}
+                    alt={`Portfolio ${openIndex + 1}`}
+                    fill
+                    style={{ objectFit: "contain" }}
+                    sizes="100vw"
+                    priority
+                    placeholder="blur"
+                    blurDataURL={makeBlurDataURL(images[openIndex])}
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}
