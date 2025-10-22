@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@devbutter/paint-background": "https://github.com/acidbutter96/paint-background.git#v1.0.1-demo-src",
     "@headlessui/react": "^2.2.0",
     "@types/node": "^22.13.0",
     "@types/react": "19.0.8",
