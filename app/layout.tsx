@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Mel Davis — Painter & Visual Artist",
-  description: "Mel Davis is a New Orleans-based painter creating expressive contemporary artworks. Commissions, exhibitions and prints available.",
+  title: "CrediCheck — Análise de Crédito",
+  description: "Template genérico de site de análise de crédito: consultas, cadastro e área do cliente.",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="pt-BR" className="scroll-smooth">
       <body
         className={`${inter.variable} bg-transparent font-inter tracking-tight text-gray-900 antialiased`}
         style={{ backgroundColor: 'transparent' }}

@@ -3,8 +3,8 @@ export const metadata = {
   description: "Página de consultas (mock) para análise de crédito.",
 };
 
-import { redirect } from "next/navigation";
+import ConsultasClient from "./ConsultasClient";
 
-export default function ServicesPage() {
-  redirect("/consultas");
+export default function ConsultasPage() {
+  return <ConsultasClient />;
 }

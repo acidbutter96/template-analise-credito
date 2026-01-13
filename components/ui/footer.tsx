@@ -9,47 +9,50 @@ export default function Footer({ border = false }: { border?: boolean }) {
           <div className="space-y-2 sm:col-span-12 lg:col-span-4">
             <Logo />
             <div className="text-sm text-gray-600">
-              © {new Date().getFullYear()} Mel Davis — All rights reserved.
+              © {new Date().getFullYear()} CrediCheck — Template genérico.
             </div>
           </div>
 
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Navigate</h3>
+            <h3 className="text-sm font-medium">Navegação</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link className="text-gray-600 transition hover:text-gray-900" href="/about">About</Link>
+                <Link className="text-gray-600 transition hover:text-gray-900" href="/">Home</Link>
               </li>
               <li>
-                <Link className="text-gray-600 transition hover:text-gray-900" href="/portfolio">Portfolio</Link>
+                <Link className="text-gray-600 transition hover:text-gray-900" href="/quem-somos">Quem somos</Link>
               </li>
               <li>
-                <Link className="text-gray-600 transition hover:text-gray-900" href="/services">Services</Link>
+                <Link className="text-gray-600 transition hover:text-gray-900" href="/consultas">Consultas</Link>
               </li>
               <li>
-                <Link className="text-gray-600 transition hover:text-gray-900" href="/contact">Contact</Link>
+                <Link className="text-gray-600 transition hover:text-gray-900" href="/cadastre-se">Cadastre-se</Link>
+              </li>
+              <li>
+                <Link className="text-gray-600 transition hover:text-gray-900" href="/area-do-cliente">Área do cliente</Link>
               </li>
             </ul>
           </div>
 
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Follow</h3>
+            <h3 className="text-sm font-medium">Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a className="text-gray-600 transition hover:text-gray-900" href="#">Instagram</a>
+                <a className="text-gray-600 transition hover:text-gray-900" href="#0">Política de privacidade</a>
               </li>
               <li>
-                <a className="text-gray-600 transition hover:text-gray-900" href="#">Twitter</a>
+                <a className="text-gray-600 transition hover:text-gray-900" href="#0">Termos de uso</a>
               </li>
               <li>
-                <a className="text-gray-600 transition hover:text-gray-900" href="#">Email</a>
+                <a className="text-gray-600 transition hover:text-gray-900" href="#0">Segurança & LGPD</a>
               </li>
             </ul>
           </div>
 
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-4">
-            <h3 className="text-sm font-medium">Contact</h3>
-            <p className="text-sm text-gray-600">Based in New Orleans — Available for commissions and exhibitions.</p>
-            <p className="text-sm text-gray-600">Email: <a href="mailto:hello@meldavis.art" className="text-gray-800">hello@meldavis.art</a></p>
+            <h3 className="text-sm font-medium">Contato</h3>
+            <p className="text-sm text-gray-600">Template de demonstração para análise de crédito (sem backend).</p>
+            <p className="text-sm text-gray-600">Email: <a href="mailto:contato@seudominio.com" className="text-gray-800">contato@seudominio.com</a></p>
           </div>
         </div>
       </div>

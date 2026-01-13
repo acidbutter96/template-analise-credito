@@ -23,34 +23,34 @@ export default function HeroHome({
 }: HeroProps) {
   const defaultTitle = (
     <>
-      Mel Davis
+      Análise de Crédito
       <br className="max-lg:hidden" />
-      Painter & Visual Artist
+      para decisões rápidas
     </>
   );
 
   const defaultDescription = (
-    <>New Orleans-based painter working in oil and mixed media. I create expressive, color-driven canvases inspired by music, memory, and the city's light. Commissions, original works, and prints available.</>
+    <>Faça consultas de CPF/CNPJ, visualize score e indicadores, e gere relatórios de forma simples. Este é um template estático (mock) pronto para você plugar em um backend.</>
   );
 
   const defaultActions = (
     <>
       <a
-        className="btn group mb-4 w-full bg-linear-to-t from-rose-600 to-pink-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-sm hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-        href="/contact"
+        className="btn group mb-4 w-full bg-linear-to-t from-blue-950 to-blue-800 bg-[length:100%_100%] bg-[bottom] text-white shadow-sm hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
+        href="/consultas"
       >
         <span className="relative inline-flex items-center">
-          Commission a Piece
-          <span className="ml-1 tracking-normal text-pink-200 transition-transform group-hover:translate-x-0.5">
+          Fazer uma consulta
+          <span className="ml-1 tracking-normal text-blue-200 transition-transform group-hover:translate-x-0.5">
             -&gt;
           </span>
         </span>
       </a>
       <a
         className="btn w-full bg-white text-gray-800 shadow-sm hover:bg-gray-50 sm:ml-4 sm:w-auto"
-        href="/portfolio"
+        href="/cadastre-se"
       >
-        View Portfolio
+        Cadastre-se
       </a>
     </>
   );

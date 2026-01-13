@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Mel Davis — Home",
-  description: "Mel Davis — painter and visual artist based in New Orleans. View portfolio and commission information.",
+  title: "CrediCheck — Home",
+  description: "Consultas e análises de crédito em um template genérico: Home, Quem somos, Consultas, Cadastre-se e Área do cliente.",
 };
 
 import Hero from "@/components/hero-home";

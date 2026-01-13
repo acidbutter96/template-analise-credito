@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Contact — Mel Davis",
-  description: "Contact Mel Davis for commissions, exhibitions, and prints.",
+  title: "Suporte — CrediCheck",
+  description: "Página de suporte (template) para análise de crédito.",
 };
 
 import Hero from "@/components/hero-home";
@@ -9,23 +9,23 @@ import Cta from "@/components/cta";
 export default function ContactPage() {
   return (
     <>
-      <Hero title={<span>Contact</span>} description={<span>Interested in a commission or exhibition? Reach out.</span>} />
+      <Hero title={<span>Suporte</span>} description={<span>Dúvidas sobre consultas, cadastro ou acesso? Fale com a gente.</span>} />
       <main className="mx-auto max-w-2xl px-4 sm:px-6 py-28">
-        <p className="mb-6 text-gray-700">Interested in a commission or exhibition? Reach out:</p>
+        <p className="mb-6 text-gray-700">Este formulário é um mock. Conecte em um serviço de e-mail ou backend.</p>
 
         <div className="mb-6">
           <p className="text-sm text-gray-600">Email</p>
-          <a className="text-lg text-gray-800" href="mailto:hello@meldavis.art">hello@meldavis.art</a>
+          <a className="text-lg text-gray-800" href="mailto:contato@seudominio.com">contato@seudominio.com</a>
         </div>
 
         <div className="rounded-lg border p-4">
           <p className="text-sm text-gray-600">Quick message</p>
-          <textarea className="mt-2 w-full rounded-md border-gray-200 p-2" rows={5} placeholder="Write a short message about your project or inquiry" />
+          <textarea className="mt-2 w-full rounded-md border-gray-200 p-2" rows={5} placeholder="Escreva uma mensagem curta sobre sua dúvida" />
           <div className="mt-3">
-            <button className="btn bg-rose-600 text-white">Send</button>
+            <button className="btn bg-blue-950 text-white hover:bg-blue-900">Enviar</button>
           </div>
         </div>
-        <p className="mt-4 text-sm text-gray-500">Note: This is a static template. To receive messages, connect the form to an email service or backend.</p>
+        <p className="mt-4 text-sm text-gray-500">Dica: para produção, adicione reCAPTCHA e rate limit.</p>
       </main>
       <Cta />
     </>

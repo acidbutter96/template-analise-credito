@@ -70,23 +70,23 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-700 hover:text-gray-900" href="/about">
-                  About
+                <Link className="text-gray-700 hover:text-gray-900" href="/quem-somos">
+                  Quem somos
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-700 hover:text-gray-900" href="/services">
-                  Services
+                <Link className="text-gray-700 hover:text-gray-900" href="/consultas">
+                  Consultas
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-700 hover:text-gray-900" href="/portfolio">
-                  Portfolio
+                <Link className="text-gray-700 hover:text-gray-900" href="/cadastre-se">
+                  Cadastre-se
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-700 hover:text-gray-900" href="/contact">
-                  Contact
+                <Link className="text-gray-700 hover:text-gray-900" href="/area-do-cliente">
+                  Área do cliente
                 </Link>
               </li>
             </ul>
@@ -130,23 +130,23 @@ function MobileNav() {
               </Link>
             </li>
             <li>
-              <Link onClick={() => setOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/about">
-                About
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/quem-somos">
+                Quem somos
               </Link>
             </li>
             <li>
-              <Link onClick={() => setOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/services">
-                Services
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/consultas">
+                Consultas
               </Link>
             </li>
             <li>
-              <Link onClick={() => setOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/portfolio">
-                Portfolio
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/cadastre-se">
+                Cadastre-se
               </Link>
             </li>
             <li>
-              <Link onClick={() => setOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/contact">
-                Contact
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded" href="/area-do-cliente">
+                Área do cliente
               </Link>
             </li>
             <li className="mt-2 px-2">
@@ -154,7 +154,7 @@ function MobileNav() {
                 onClick={() => setOpen(false)}
                 className="w-full rounded-md bg-gray-100 px-3 py-2 text-sm text-gray-700 hover:bg-gray-200"
               >
-                Close menu
+                Fechar menu
               </button>
             </li>
           </ul>
